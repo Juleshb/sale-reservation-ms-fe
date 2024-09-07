@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* CalendarCustom.css */
+.rbc-calendar {
+    @apply bg-white dark:bg-gray-900;
+  }
+  
+  .rbc-event {
+    @apply bg-blue-500 text-white rounded-lg p-2;
+  }
+  
+  .rbc-header {
+    @apply bg-gray-100 dark:bg-gray-800 text-center text-lg font-bold py-2;
+  }
+  
+  .rbc-today {
+    @apply bg-gray-200 dark:bg-gray-700;
+  }
+  
+  .rbc-off-range {
+    @apply text-gray-400;
+  }
+  
