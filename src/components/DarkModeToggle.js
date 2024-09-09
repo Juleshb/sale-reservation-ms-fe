@@ -33,7 +33,7 @@ const DarkModeToggle = () => {
 
     <button
       onClick={toggleDarkMode}
-      className="p-2 mr-2 bg-gray-200 flex dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full  focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 items-center flex"
+      className="p-2 mr-2 bg-gray-200 dark:bg-slate-900 flex dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full  focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 items-center flex"
     >
       
       <Icon icon="line-md:light-dark-loop" />

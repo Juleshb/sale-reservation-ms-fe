@@ -27,5 +27,6 @@ module.exports = {
         fadeIn: 'fadeIn 0.3s ease-in',
       },},
   },
+
   plugins: [],
 };

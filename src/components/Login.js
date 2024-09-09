@@ -32,7 +32,7 @@ const Login = () => {
       });
 
       // Redirect the user to the homepage or dashboard
-      navigate('/');
+      navigate('/admin');
     } catch (error) {
       setMessage('Invalid email or password.');
       console.error(error);
