@@ -1,9 +1,9 @@
-import Navbar from "../../components/navs/usernav";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import HomePage from "../../components/HomePage";
+import Navbar from "../../components/navs/nav";
+import Sidebar from "../../components/Sidebar/usersidebar";
+import ReservationList from "../../components/ReservationList";
 
 
-export default function Admin() {
+export default function Reservation() {
   return (
     <>
       <Sidebar />
@@ -14,7 +14,7 @@ export default function Admin() {
       </div>
         <div className="px-4 md:px-10 mx-auto w-full m-2">
           
-         <HomePage/>
+         <ReservationList/>
          
         </div>
         

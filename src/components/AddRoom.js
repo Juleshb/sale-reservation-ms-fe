@@ -33,7 +33,7 @@ const AddRoom = () => {
 
   return (
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Add a New Room</h2>
+      <h2 className="text-base text-sm font-normal underline underline-offset-1 mb-4">Add a New Room</h2>
 
       {message && <p className="mb-4 text-red-500">{message}</p>}
 
@@ -62,7 +62,7 @@ const AddRoom = () => {
 
         <button
           type="submit"
-          className="bg-primary text-white py-2 px-4 rounded hover:bg-blue-600"
+          className="bg-primary text-white py-2 px-4 rounded hover:bg-secondary hover:text-primary"
         >
           Add Room
         </button>
