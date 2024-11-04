@@ -5,6 +5,7 @@ module.exports = {
   ],
   darkMode: 'class', // Enable dark mode by using a class
   theme: {
+   
     extend: {
       colors: {
         primary: '#2E6B57',
@@ -12,19 +13,34 @@ module.exports = {
         textcol: '#726E6E',
       },
       keyframes: {
-        bounceIn: {
-          '0%': { transform: 'scale(0.95)', opacity: '0' },
-          '80%': { transform: 'scale(1.05)', opacity: '1' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
+        move: {
+          "50%": { transform: "translateY(-1rem)" },
         },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        scaleUp: {
+          "0%": { transform: "scale(0.8)" },
+          "50%": { transform: "scale(1.2)" },
+          "100%": { transform: "scale(0.8)" },
         },
       },
       animation: {
-        bounceIn: 'bounceIn 0.4s ease-out',
-        fadeIn: 'fadeIn 0.3s ease-in',
+        movingY: "move 3s linear infinite",
+        rotating: "rotate 15s linear infinite",
+        scalingUp: "scaleUp 3s linear infinite",
+      },
+      fontFamily: {
+        Jost: ["Jost", "sans-serif"],
+        Lobster: [ "Lobster","sans-seri"]
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "12px",
+          md: "32px"
+        }
       },},
   },
 

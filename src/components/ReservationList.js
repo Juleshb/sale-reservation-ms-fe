@@ -17,6 +17,12 @@ const ReservationList = () => {
   const [editingReservationId, setEditingReservationId] = useState(null); // Track which reservation is being edited
   const [message, setMessage] = useState('');
 
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
+
   // Fetch the reservations
   useEffect(() => {
     const fetchReservations = async () => {
@@ -103,8 +109,38 @@ const ReservationList = () => {
 
       {reservations.length > 0 ? (
         <div className="flex flex-col lg:flex-row gap-4">
-          {/* Reservation Cards Section */}
-          <div className="w-full lg:w-1/3 space-y-4">
+        <div className="relative flex flex-col min-w-0 break-words w-full mb-6  border border-primary">
+      <div className="items-center flex flex-wrap justify-center bg-primary text-white w-full h-auto space-x-4 ">
+
+        <button
+          className={`px-4 items-center mt-2 mb-2 rounded-lg text-xs flex  py-3 block ${
+            activeTab === 1
+              ? 'bg-white text-primary '
+              : ''
+          }`}
+          onClick={() => handleTabClick(1)}
+        >
+            <Icon icon="fluent-mdl2:timeline-delivery" className="mr-2 text-sm" />
+            Reservations
+        </button>
+        <button
+          className={`px-4 items-center mt-2 mb-2 rounded-lg text-xs flex  py-3 block ${
+            activeTab === 2
+            ? 'bg-white text-primary'
+            : ''
+          }`}
+          onClick={() => handleTabClick(2)}
+        >
+            
+        <i className='mr-2'><Icon icon="el:list-alt" /></i>
+        Calender
+        </button>
+       
+      </div>
+      <div className="mt-4">
+        {activeTab === 1 && (
+          <div className="p-4 rounded-lg ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {reservations.map((reservation) => (
               <div key={reservation.id} className="bg-white dark:bg-slate-800 p-4 shadow-md rounded-lg">
                 <div>
@@ -136,9 +172,12 @@ const ReservationList = () => {
               </div>
             ))}
           </div>
-
-          {/* Calendar Section */}
-          <div className="w-full lg:w-2/3 bg-white dark:bg-slate-800 p-6">
+          
+          </div>
+        )}
+        {activeTab === 2 && (
+          <div className=" p-4 rounded-lg ">
+          <div className="w-full  bg-white dark:bg-slate-800 p-6">
             <Calendar
               localizer={localizer}
               events={calendarEvents}
@@ -152,10 +191,20 @@ const ReservationList = () => {
               }}
             />
           </div>
+          </div>
+        )}
+ 
+      </div>
+    </div>
+         
         </div>
       ) : (
         <p>No reservations found.</p>
       )}
+
+
+      
+
     </div>
   );
 };

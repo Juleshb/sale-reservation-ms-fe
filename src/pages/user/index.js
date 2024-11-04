@@ -1,9 +1,9 @@
-import Navbar from "../../components/navs/usernav";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import Navbar from "../../components/navs/nav";
+import Sidebar from "../../components/Sidebar/usersidebar";
 import HomePage from "../../components/HomePage";
 
 
-export default function Admin() {
+export default function User() {
   return (
     <>
       <Sidebar />

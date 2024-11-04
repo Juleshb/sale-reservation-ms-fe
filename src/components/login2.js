@@ -40,7 +40,7 @@ const Login = () => {
   
         const { token, user } = response.data; // Extract token and user info from the response
       if (response) {
-        // const role = data.users.role; // Extract role from API response
+        const role = user.role; // Extract role from API response
         // const authToken = data.token;
         // const lastName = data.email;
         
@@ -61,15 +61,15 @@ const Login = () => {
         setShowFailureMessage(false);
         setSuccessMessage(response.message || 'You have logedin!');
 
-        navigate('/admin');
+        //navigate('/admin');
 
-        // if (role === 'admin') {
-        //   navigate('/adimin'); // Use navigate instead of history.push for redirection
-        // } else if (role === 'nurse') {
-        //   navigate('/nurses'); // Use navigate instead of history.push for redirection
-        // }else if(role === 'ideologist'){
-        //   navigate('/audiologiste')
-        // }
+        if (role === 'user') {
+          navigate('/user'); // Use navigate instead of history.push for redirection
+        } else if (role === 'admin') {
+          navigate('/admin'); // Use navigate instead of history.push for redirection
+        }else if(role === ''){
+          navigate('/admin')
+        }
       }
       else {
         // Handle error response from API

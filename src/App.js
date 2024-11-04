@@ -7,7 +7,9 @@ import Reservation from './pages/superadmin/reservations';
 
 import LandingPage from './pages/index';
 import Admin from './pages/superadmin';
+import User from './pages/user';
 import { AuthContext } from './context/AuthContext';
+import Reservations from './pages/user/reservations';
 
 
 function App() {
@@ -28,6 +30,14 @@ function App() {
             <Route
               path="/admin"
               element={authData ? <Admin  /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/user"
+              element={authData ? <User  /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/reservations"
+              element={authData ? <Reservations  /> : <Navigate to="/login" />}
             />
             {/* Add other protected routes as needed */}
           </Routes>
